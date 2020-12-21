@@ -1,3 +1,95 @@
 # 基本UI控件
 
-**可能用得上的UI控件为了便于开发者打造各式各样的优秀App，UIKit框架提供了非常多功能强大又易用的UI控件以下列举一些在开发中可能用得上的UI控件如下图**：        ![img](https://uploader.shimo.im/f/ehqwt1pyN0GYE6SI.png!thumbnail)      提示：千万别一口气去百度所有的控件，没有这个必要一口气学完所有的控件，原因如下：有些控件可能一年用不到1次，用到时再学iOS中控件的用法都是相似相通的，掌握最主要、最常用的控件，就可以快速上手其他控件面试中不会被问及诸如“进度条会用不？开关会用不？”之类的问题 分类和类扩展类扩展:可以扩展属性和方法(一般情况下属性都是封装在类扩展当中) 分类:只能扩展方法        ![img](https://uploader.shimo.im/f/jeVHaeawqIHauCmS.png!thumbnail)               ![img](https://uploader.shimo.im/f/jwJ5Hx6AIROblL3C.png!thumbnail)               ![img](https://uploader.shimo.im/f/z479LYmBsPJOEf6n.png!thumbnail)               ![img](https://uploader.shimo.im/f/TH5qr3PUSOBUdXdn.png!thumbnail)               ![img](https://uploader.shimo.im/f/NuQ0t3pUOjbBbvAh.png!thumbnail)                ![img](https://uploader.shimo.im/f/EClMRW4QEZatvoRC.png!thumbnail)               ![img](https://uploader.shimo.im/f/X98XxLkNUTEYAyXH.png!thumbnail)               ![img](https://uploader.shimo.im/f/giBVqnbfmDgDGsRP.png!thumbnail)                ![img](https://uploader.shimo.im/f/XlXnqbxjl9stLANn.png!thumbnail)               ![img](https://uploader.shimo.im/f/FW6lmDKE1bQU5gJC.png!thumbnail)      注意:是超出了屏幕,可以用它来显示,它是可以滚动的!         ![img](https://uploader.shimo.im/f/lOJWZzgLhMNNXiDP.png!thumbnail)               ![img](https://uploader.shimo.im/f/jrL0Ocjb5XtbKGlm.png!thumbnail)               ![img](https://uploader.shimo.im/f/ESVU7jKKqFSXJwGD.png!thumbnail)               ![img](https://uploader.shimo.im/f/YtHkh91TzM5E6G5B.png!thumbnail)               ![img](https://uploader.shimo.im/f/2I5ft6O5LPxfn9Qf.png!thumbnail)               ![img](https://uploader.shimo.im/f/Vv6NWw6dHXUcJThI.png!thumbnail)               ![img](https://uploader.shimo.im/f/rg00mdd2isZFSW9j.png!thumbnail)               ![img](https://uploader.shimo.im/f/L0TMu1VrbWjdu3So.png!thumbnail)               ![img](https://uploader.shimo.im/f/j0nTAvSJfyI4o3XR.png!thumbnail)               ![img](https://uploader.shimo.im/f/HOIaGLn7UqZPOHAy.png!thumbnail)               ![img](https://uploader.shimo.im/f/4euu05tQJ8GasUZm.png!thumbnail)        UILable是iPhone界面最基本的控件，主要用来显示文本信息。常用属性和方法有：1、创建CGRect rect = CGRectMake(100, 200, 50, 50);UILabel *label = [[UILabel alloc] initWithFrame:rect]; 2、text 设置和读取文本内容,默认为nil label.text = @”文本信息”; 设置内容 NSLog(@”%@”, label.text); 读取内容  3、textColor 设置文字颜色，默认为黑色 lable.textColor = [UIColor redColor]; 4、font 设置字体大小，默认17 label.font = [UIFont systemFontOfSize:20]; 一般方法 label.font = [UIFont boldSystemFontOfSize:20]; 加粗方法 label.font = [UIFont fontWithName:@"Arial" size:16]; 指定  字体的方法还有⼀一种从外部导入字体的方法。5、textAlignment 设置标签文本对齐方式。 label.textAlignment = NSTextAlignmentCenter; 还有 NSTextAlignmentLeft、NSTextAlignmentRight. 6、numberOfLines 标签最多显示行数,如果为0则表示多行。 label.numberOfLines = 2; 7、enabled 只是决定了Label的绘制方式，将它设置为NO将会使文本变暗，表示它没有激活，这时向它设置颜色值是无效的。 label.enable = NO;  8、highlighted 是否高亮显示 label.highlighted = YES; label.highlightedTextColor = [UIColor orangeColor]; 高亮  显示时的文本颜色9、ShadowColor 设置阴影颜色 [label setShadowColor:[UIColor blackColor]]; 10、ShadowOffset 设置阴影偏移量 [label setShadowOffset:CGSizeMake(-1, -1)]; 11、baselineAdjustment 如果adjustsFontSizeToFitWidth属性设置为YES，这个属性就来控制文本基线的行为。 label.baselineAdjustment = UIBaselineAdjustmentNone;UIBaselineAdjustmentAlignBaselines = 0,默认，文本最上端与中线对齐。UIBaselineAdjustmentAlignCenters, 文本中线与label中线对齐。 UIBaselineAdjustmentNone, 文本最低端与label中线对齐。  12、Autoshrink 是否自动收缩 Fixed Font Size 默认,如果Label宽度小于文字长度时时,文字大小不自动缩放 minimumScaleFactor 设置最小收缩比例，如果Label宽度小于文字长度时，文字进行收缩，收缩超过比例后，停止收缩。 minimumFontSize 设置最小收缩字号，如果Label宽度小于文字长度时，文字字号减小，低于设定字号后，不再减小。6.0以后不再使用了。 label.minimumScaleFactor = 0.5; 13、adjustsLetterSpacingToFitWidth 改变字母之间的间距来适应Label大小 myLabel.adjustsLetterSpacingToFitWidth = NO;  14、 lineBreakMode 设置文字过长时的显示格式 label.lineBreakMode = NSLineBreakByCharWrapping;以字符为显示单位显示，后面部分省略不显示。label.lineBreakMode = NSLineBreakByClipping;剪切与文本宽度相同的内容长度，后半部分被删除。label.lineBreakMode = NSLineBreakByTruncatingHead;前面部分文字以……方式省略，显示尾部文字内容。label.lineBreakMode = NSLineBreakByTruncatingMiddle;中间的内容以……方式省略，显示头尾的文字内容。label.lineBreakMode = NSLineBreakByTruncatingTail;结尾部分的内容以……方式省略，显示头的文字内容。label.lineBreakMode = NSLineBreakByWordWrapping;以单词为显示单位显示，后面部分省略不显示。15、 adjustsFontSizeToFitWidth 设置字体大小适应label宽度 label.adjustsFontSizeToFitWidth = YES;  16、attributedText：设置标签属性文本。NSString *text = @"first"; NSMutableAttributedString *textLabelStr =[[NSMutableAttributedString alloc] initWithString:text];[textLabelStr setAttributes:@{NSForegroundColorAttributeName :                      [UIColor lightGrayColor], NSFontAttributeName :                      [UIFont systemFontOfSize:17]} range:NSMakeRange(11,                                                                                10)];label.attributedText = textLabelStr;17、竖排文字显示每个文字加一个换行符，这是最方便和简单的实现方式。label.text = @"请\n竖\n直\n方\n向\n排\n列"; label.numberOfLines = [label.text length]; 18、计算UIlabel 随字体多行后的高度 CGRect bounds = CGRectMake(0, 0, 200, 300);heightLabel = [myLabel textRectForBounds:bounds                 limitedToNumberOfLines:20]; 计算20行后的Label的Frame NSLog(@"%f",heightLabel.size.height); 19、UILabel根据字数多少自动实现适应高度UILabel *msgLabel = [[UILabel alloc]                     initWithFrame:CGRectMake(15, 45, 0, 0)];msgLabel.backgroundColor = [UIColor lightTextColor];[msgLabel setNumberOfLines:0];msgLabel.lineBreakMode = UILineBreakModeWordWrap;msgLabel.font = [UIFont fontWithName:@"Arial" size:12]; CGSize size = CGSizeMake(290, 1000);msgLabel.text = @"获取到的deviceToken，我们可以通过webservice服务提交给.net应用程序，这里我简单处理，直接打印出来，拷贝到.net应用环境中使用。"; CGSize msgSie = [msgLabel.text sizeWithFont:fonts                      constrainedToSize:size];[msgLabel setFrame:CGRectMake(15, 45, 290, msgSie.height)]; 20、渐变字体LabelUIColor *titleColor = [UIColor colorWithPatternImage:[UIImage                                                      imageNamed:@"btn.png"]];NSString *title = @"Setting"; UILabel *titleLabel = [[UILabel alloc]                       initWithFrame:CGRectMake(0, 0, 80, 44)];titleLabel.textColor = titleColor;titleLabel.text = title;titleLabel.font = [UIFont boldSystemFontOfSize:20];titleLabel.backgroundColor = [UIColor clearColor];[self.view addSubview:titleLabel];[titleLabel release]; 21、Label添加边框titleLabel.layer.borderColor = [[UIColor grayColor] CGColor];titleLabel.layer.borderWidth = 2;
+**可能用得上的UI控件为了便于开发者打造各式各样的优秀App，UIKit框架提供了非常多功能强大又易用的UI控件以下列举一些在开发中可能用得上的UI控件如下图**：        ![img](https://uploader.shimo.im/f/ehqwt1pyN0GYE6SI.png!thumbnail)      
+
+上述控件为一般开发当中经常使用的控件，一般在开发当中会对其进行封装，分类和类扩展:可以扩展属性和方法(一般情况下属性都是封装在类扩展当中) 分类:只能扩展方法。![img](https://uploader.shimo.im/f/jeVHaeawqIHauCmS.png!thumbnail)               ![img](https://uploader.shimo.im/f/jwJ5Hx6AIROblL3C.png!thumbnail)               ![img](https://uploader.shimo.im/f/z479LYmBsPJOEf6n.png!thumbnail)               ![img](https://uploader.shimo.im/f/TH5qr3PUSOBUdXdn.png!thumbnail)               ![img](https://uploader.shimo.im/f/NuQ0t3pUOjbBbvAh.png!thumbnail)                ![img](https://uploader.shimo.im/f/EClMRW4QEZatvoRC.png!thumbnail)               ![img](https://uploader.shimo.im/f/X98XxLkNUTEYAyXH.png!thumbnail)               ![img](https://uploader.shimo.im/f/giBVqnbfmDgDGsRP.png!thumbnail)                ![img](https://uploader.shimo.im/f/XlXnqbxjl9stLANn.png!thumbnail)               ![img](https://uploader.shimo.im/f/FW6lmDKE1bQU5gJC.png!thumbnail)      注意:是超出了屏幕,可以用它来显示,它是可以滚动的!         ![img](https://uploader.shimo.im/f/lOJWZzgLhMNNXiDP.png!thumbnail)               ![img](https://uploader.shimo.im/f/jrL0Ocjb5XtbKGlm.png!thumbnail)               ![img](https://uploader.shimo.im/f/ESVU7jKKqFSXJwGD.png!thumbnail)               ![img](https://uploader.shimo.im/f/YtHkh91TzM5E6G5B.png!thumbnail)               ![img](https://uploader.shimo.im/f/2I5ft6O5LPxfn9Qf.png!thumbnail)               ![img](https://uploader.shimo.im/f/Vv6NWw6dHXUcJThI.png!thumbnail)               ![img](https://uploader.shimo.im/f/rg00mdd2isZFSW9j.png!thumbnail)               ![img](https://uploader.shimo.im/f/L0TMu1VrbWjdu3So.png!thumbnail)               ![img](https://uploader.shimo.im/f/j0nTAvSJfyI4o3XR.png!thumbnail)               ![img](https://uploader.shimo.im/f/HOIaGLn7UqZPOHAy.png!thumbnail)               ![img](https://uploader.shimo.im/f/4euu05tQJ8GasUZm.png!thumbnail)        UILable是iPhone界面最基本的控件，主要用来显示文本信息。常用属性和方法有：
+
+```objective-c
+1、创建
+CGRect rect = CGRectMake(100, 200, 50, 50);
+
+UILabel *label = [[UILabel alloc] initWithFrame:rect]; 
+```
+
+```objective-c
+2、text 设置和读取文本内容,默认为nil
+
+ label.text = @”文本信息”;
+
+ 设置内容
+
+ NSLog(@”%@”, label.text); 读取内容  
+
+3、textColor 设置文字颜色，默认为黑色 lable.textColor = [UIColor redColor]; 4、font 设置字体大小，默认17 label.font = [UIFont systemFontOfSize:20]; 一般方法 label.font = [UIFont boldSystemFontOfSize:20];
+
+ 加粗方法 label.font = [UIFont fontWithName:@"Arial" size:16]; 指定  字体的方法还有⼀一种从外部导入字体的方法。
+
+5、textAlignment 设置标签文本对齐方式。 label.textAlignment = NSTextAlignmentCenter; 还有 NSTextAlignmentLeft、NSTextAlignmentRight. 
+
+6、numberOfLines 标签最多显示行数,如果为0则表示多行。 label.numberOfLines = 2; 
+
+7、enabled 只是决定了Label的绘制方式，将它设置为NO将会使文本变暗，表示它没有激活，这时向它设置颜色值是无效的。 label.enable = NO;  
+
+8、highlighted 是否高亮显示 label.highlighted = YES; label.highlightedTextColor = [UIColor orangeColor]; 高亮  显示时的文本颜色
+
+9、ShadowColor 设置阴影颜色 [label setShadowColor:[UIColor blackColor]]; 
+
+10、ShadowOffset 设置阴影偏移量 [label setShadowOffset:CGSizeMake(-1, -1)]; 11、baselineAdjustment 如果adjustsFontSizeToFitWidth属性设置为YES，这个属性就来控制文本基线的行为。
+  label.baselineAdjustment = UIBaselineAdjustmentNone;
+UIBaselineAdjustmentAlignBaselines = 0,默认，文本最上端与中线对齐。UIBaselineAdjustmentAlignCenters, 文本中线与label中线对齐。 UIBaselineAdjustmentNone, 文本最低端与label中线对齐。 
+
+ 12、Autoshrink 是否自动收缩 Fixed Font Size 默认,如果Label宽度小于文字长度时时,文字大小不自动缩放 minimumScaleFactor 设置最小收缩比例，如果Label宽度小于文字长度时，文字进行收缩，收缩超过比例后，停止收缩。 minimumFontSize 设置最小收缩字号，如果Label宽度小于文字长度时，文字字号减小，低于设定字号后，不再减小。6.0以后不再使用了。 label.minimumScaleFactor = 0.5; 
+
+13、adjustsLetterSpacingToFitWidth 改变字母之间的间距来适应Label大小 myLabel.adjustsLetterSpacingToFitWidth = NO;  
+
+14、 lineBreakMode 设置文字过长时的显示格式 label.lineBreakMode = NSLineBreakByCharWrapping;以字符为显示单位显示，后面部分省略不显示。label.lineBreakMode = NSLineBreakByClipping;剪切与文本宽度相同的内容长度，后半部分被删除。
+
+label.lineBreakMode = NSLineBreakByTruncatingHead;前面部分文字以……方式省略，显示尾部文字内容。
+
+label.lineBreakMode = NSLineBreakByTruncatingMiddle;中间的内容以……方式省略，显示头尾的文字内容。
+
+label.lineBreakMode = NSLineBreakByTruncatingTail;结尾部分的内容以……方式省略，显示头的文字内容。
+
+label.lineBreakMode = NSLineBreakByWordWrapping;以单词为显示单位显示，后面部分省略不显示。
+
+15、 adjustsFontSizeToFitWidth 设置字体大小适应label宽度 label.adjustsFontSizeToFitWidth = YES; 
+
+ 16、attributedText：设置标签属性文本。
+
+NSString *text = @"first"; 
+
+NSMutableAttributedString *textLabelStr =[[NSMutableAttributedString alloc] initWithString:text];[textLabelStr setAttributes:@{NSForegroundColorAttributeName :                      [UIColor lightGrayColor], NSFontAttributeName :                      [UIFont systemFontOfSize:17]} range:NSMakeRange(11,                                                                                10)];label.attributedText = textLabelStr;
+
+17、竖排文字显示每个文字加一个换行符，这是最方便和简单的实现方式。label.text = @"请\n竖\n直\n方\n向\n排\n列"; 
+
+label.numberOfLines = [label.text length]; 
+
+18、计算UIlabel 随字体多行后的高度 CGRect bounds = CGRectMake(0, 0, 200, 300);
+
+heightLabel = [myLabel textRectForBounds:bounds limitedToNumberOfLines:20]; 
+
+计算20行后的Label的Frame NSLog(@"%f",heightLabel.size.height); 
+19、UILabel根据字数多少自动实现适应高度
+  UILabel *msgLabel = [[UILabel alloc]  initWithFrame:CGRectMake(15, 45, 0, 0)];
+msgLabel.backgroundColor = [UIColor lightTextColor];
+[msgLabel setNumberOfLines:0];
+msgLabel.lineBreakMode = UILineBreakModeWordWrap;msgLabel.font = [UIFont fontWithName:@"Arial" size:12]; 
+CGSize size = CGSizeMake(290, 1000);
+msgLabel.text = @"获取到的deviceToken，我们可以通过webservice服务提交给.net应用程序，这里我简单处理，直接打印出来，拷贝到.net应用环境中使用。"; 
+
+CGSize msgSie = [msgLabel.text sizeWithFont:fonts                      constrainedToSize:size];[msgLabel setFrame:CGRectMake(15, 45, 290, msgSie.height)]; 
+
+20、渐变字体
+  LabelUIColor *titleColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"btn.png"]];
+NSString *title = @"Setting"; 
+UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80, 44)];
+titleLabel.textColor = titleColor;titleLabel.text = title;
+titleLabel.font = [UIFont boldSystemFontOfSize:20];
+titleLabel.backgroundColor = [UIColor clearColor];
+[self.view addSubview:titleLabel];[titleLabel release]; 
+
+21、Label添加边框
+titleLabel.layer.borderColor = [[UIColor grayColor] CGColor];
+titleLabel.layer.borderWidth = 2;
+```
+
