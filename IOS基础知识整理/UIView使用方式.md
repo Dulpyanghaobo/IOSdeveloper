@@ -92,3 +92,8 @@
 >   18.  center 只能设置位置   设置控件的中心点在父控件中的位置
 >   19.   OC 不允许直接修改对象的 结构体的 成员的 属性   解决的方案  command + ]     来一个临时的frame 存储 对象的frame     CGRect tempFrame = self.myBtn.frame;     直接改变临时的frame     tempFrame.origin.y -= 10;    赋值给对象的frame     self.myBtn.frame = tempFrame; 
 
+##   layoutSubviews   
+
+1.  一般都是设置子控件的frame  
+2.  只要父控件的frame发生改变就会调用
+3.   在initWithFrame之后也会默认调用一次这个方法(尝试着给子控件赋值) 
